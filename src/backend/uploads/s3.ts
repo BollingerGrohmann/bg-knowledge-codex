@@ -36,6 +36,8 @@ export default class S3UploadsDriver implements UploadsDriver {
         accessKeyId: this.config.s3.accessKeyId,
         secretAccessKey: this.config.s3.secretAccessKey,
       },
+      endpoint: this.config.s3.baseUrl,
+      forcePathStyle: true,
     });
   }
 

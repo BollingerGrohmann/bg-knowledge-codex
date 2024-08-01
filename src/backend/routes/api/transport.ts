@@ -49,7 +49,7 @@ function getFileUrl(fileData: FileData): string {
   } else {
     const baseUrlWithoutTrailingSlash = appConfig.uploads.s3.baseUrl.replace(/\/+$/, '');
 
-    return baseUrlWithoutTrailingSlash + '/' + fileData.filename;
+    return baseUrlWithoutTrailingSlash + '/' + appConfig.uploads.s3.bucket + '/' + fileData.filename;
   }
 }
 
