@@ -31,12 +31,7 @@ export function createMenuTree(parentPageId: EntityId, pages: Page[], pagesOrder
   const unordered = pages.filter(page => isEqualIds(page._parent, parentPageId));
   const branch = Array.from(new Set([...ordered, ...unordered]));
 
-  /**
-   * stop recursion when we got the passed max level
-   */
-  if (currentLevel === level + 1) {
-    return [];
-  }
+
 
   /**
    * Each parents children can have subbranches

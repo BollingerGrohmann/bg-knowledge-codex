@@ -2,6 +2,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+
 /**
  * The __dirname CommonJS variables are not available in ES modules.
  * https://nodejs.org/api/esm.html#no-__filename-or-__dirname
