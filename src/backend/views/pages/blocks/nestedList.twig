@@ -1,0 +1,29 @@
+{% set tag = 'ul' %}
+
+{% if style == 'ordered' %}
+  {% set tag = 'ol' %}
+{% endif %}
+
+<{{ tag }} class="block-list block-list--{{ style }}">
+
+  {% for item in items %}
+
+    {% if item.content is not defined and item.items is not defined %}
+      {# assume "regular list" #}
+      <li>
+        {{ item }}
+      </li>
+
+    {% else %}
+
+{#      {% for subitem in item.items %}#}
+
+        {% include './nestedList_items.twig' with item %}
+
+{#      {% endfor %}#}
+
+    {% endif %}
+
+  {% endfor %}
+
+</{{ tag }}>

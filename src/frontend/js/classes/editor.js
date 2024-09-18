@@ -7,6 +7,7 @@ import Header from '@editorjs/header';
 import Image from '@editorjs/image';
 import CodeTool from '@editorjs/code';
 import NestedList from '@editorjs/nested-list';
+import List from '@editorjs/list';
 import Delimiter from '@editorjs/delimiter';
 import Table from '@editorjs/table';
 import Warning from '@editorjs/warning';
@@ -131,6 +132,14 @@ export default class Editor {
         },
 
         list: {
+          class: List,
+          inlineToolbar: true,
+          config: {
+            defaultStyle: 'ordered'
+          },
+        },
+
+        nestedList: {
           class: NestedList,
           inlineToolbar: true,
           config: {

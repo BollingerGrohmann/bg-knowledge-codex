@@ -1,0 +1,24 @@
+
+      {% if content is defined %}
+
+        <li>
+          {{ content }}
+        </li>
+
+      {% endif %}
+
+      {% if items is defined %}
+
+        <ol>
+
+          {% for item in items %}
+
+            {% include './nestedList_items.twig' with item %}
+
+          {% endfor %}
+
+        </ol>
+
+      {% endif %}
+
+
