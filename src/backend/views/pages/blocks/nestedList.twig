@@ -18,7 +18,7 @@
 
 {#      {% for subitem in item.items %}#}
 
-        {% include './nestedList_items.twig' with item %}
+        {% include './nestedList_items.twig' with {'data': item, 'tag': tag, 'style': style} %}
 
 {#      {% endfor %}#}
 

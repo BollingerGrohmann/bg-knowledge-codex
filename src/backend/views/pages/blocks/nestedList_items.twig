@@ -1,24 +1,24 @@
 
-      {% if content is defined %}
+<li>
+      {% if data.content is defined %}
 
-        <li>
-          {{ content }}
-        </li>
+          {{ data.content }}
 
       {% endif %}
 
-      {% if items is defined %}
+      {% if data.items is defined %}
 
-        <ol>
+        <{{ tag }} class="block-list block-list--{{ style }}">
 
-          {% for item in items %}
+          {% for item in data.items %}
 
-            {% include './nestedList_items.twig' with item %}
+            {% include './nestedList_items.twig' with {'data': item, 'tag': tag} %}
 
           {% endfor %}
 
-        </ol>
+        </{{ tag }}>
 
       {% endif %}
 
+</li>
 

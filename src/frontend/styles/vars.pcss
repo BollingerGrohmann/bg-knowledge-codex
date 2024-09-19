@@ -266,15 +266,32 @@
     padding-left: 40px;
 
     &--ordered {
-      list-style-type: decimal
+
+      list-style-type: none;
+      counter-reset: itemCounter 0;
+
+      & > li {
+
+        counter-increment: itemCounter 1;
+
+      }
+
+      & > li::before {
+
+        font-weight: bold;
+        content: counters(itemCounter, '.')'.';
+
+      }
+
     }
 
     li {
+      
       padding: 0;
 
-      &:not(:last-of-type){
-        margin-bottom: 8px;
-      }
+      margin-top: 4px;
+      margin-bottom: 4px;
+
     }
   }
 
