@@ -117,7 +117,7 @@ router.post('/transport/file', fileUploader, async (req: Request, res: Response)
   }
 
   try {
-    const fileData = await Transport.save(req.files.file[0]);
+    const fileData: FileData = await Transport.save(req.files.file[0]);
     const url = getFileUrl(fileData);
 
     res.status(200).json({
@@ -126,6 +126,8 @@ router.post('/transport/file', fileUploader, async (req: Request, res: Response)
         url,
         mime: fileData.mimetype,
         size: fileData.size,
+        name: fileData.name,
+        filename: fileData.filename,
       },
       message: '',
     });
