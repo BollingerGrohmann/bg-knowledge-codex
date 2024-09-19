@@ -170,7 +170,7 @@ export default class Editor {
             endpoint: '/api/transport/file',
             buttonText: 'Upload File',
             types: 'application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-            errorMessage: 'File Upload did not work. Contact xy'
+            errorMessage: 'File Upload did not work.'
           }
         },
 
