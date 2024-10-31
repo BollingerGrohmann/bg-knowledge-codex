@@ -19,7 +19,13 @@
           {% else %}
             href="/page/{{ option._id }}"
           {% endif %}>
-          {{ option.title | striptags }}
+
+          {% if option.image %}
+            <img src="{{ option.image | striptags }}" alt="{{ option.title | striptags }}" style="height: 20px;" />
+          {% else %}
+            alt: {{ option.title | striptags }}
+          {% endif %}
+
         </a>
       </li>
     {% endfor %}

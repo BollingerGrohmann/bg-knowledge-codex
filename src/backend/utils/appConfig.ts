@@ -81,8 +81,11 @@ const FrontendConfig = z.object({
     serve: z.string().optional(), // Carbon serve url
     placement: z.string().optional(), // Carbon placement
   }),
-  menu: z.array(z.union([z.string(), z.object({ title: z.string(),
-    uri: z.string() })])), // Menu for pages
+  menu: z.array(z.union([z.string(), z.object({
+    title: z.string(),
+    uri: z.string(),
+    image: z.string(),
+  })])), // Menu for pages
 });
 
 /**
