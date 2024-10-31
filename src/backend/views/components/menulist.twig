@@ -1,0 +1,19 @@
+<li>
+
+  <a
+    class="docs-sidebar__section-list-item-wrapper"
+    href="{{ item.uri ? '/' ~ item.uri : '/page/' ~ item._id }}">
+    <div class="docs-sidebar__section-list-item {{page is defined and toString(page._id) == toString(item._id) ? 'docs-sidebar__section-list-item--active' : ''}}">
+      <span>{{ item.title | striptags }}</span>
+    </div>
+  </a>
+
+  {% if item.children is not empty %}
+    <ul class="docs-sidebar__section-list">
+      {% for child in item.children %}
+        {% include './menulist.twig' with {'item': child} %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</li>

@@ -233,7 +233,8 @@
 
   &__section-title--active,
   &__section-list-item--active {
-    background: linear-gradient(270deg, #129bff 0%, #8a53ff 100%);
+    //background: linear-gradient(270deg, #129bff 0%, #8a53ff 100%);
+    background: linear-gradient(270deg, #7c7c7c 0%, #000000 100%);
     color: white;
 
     @media (--can-hover) {
@@ -249,6 +250,11 @@
     margin: 0;
     z-index: 1;
     position: relative;
+  }
+
+  li > &__section-list {
+    padding: 0 0 0 10px;
+    margin: 0;
   }
 
   &__section-toggler {

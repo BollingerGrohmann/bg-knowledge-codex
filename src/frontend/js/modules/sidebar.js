@@ -128,9 +128,27 @@ export default class Sidebar {
       return;
     }
 
-    const itemsCount = sectionList.children.length;
+    // const itemsCount = sectionList.children.length;
+    const itemsCount = this.countItems(sectionList);
 
     sectionList.style.maxHeight = `${itemsCount * ITEM_HEIGHT}px`;
+
+  }
+
+  countItems(element) {
+
+    if (!element) return 0;
+
+    const items = element.getElementsByTagName('li');
+    let count = items.length;
+
+    for (let i = 0; i < count; i++) {
+      count += this.countItems(items[i]);
+    }
+
+    console.warn('COUNTING ' + count)
+    return count;
+
   }
 
   /**

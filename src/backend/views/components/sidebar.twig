@@ -28,15 +28,16 @@
         {% if firstLevelPage.children is not empty %}
           <ul class="docs-sidebar__section-list">
             {% for child in firstLevelPage.children %}
-              <li>
-                <a
-                  class="docs-sidebar__section-list-item-wrapper"
-                  href="{{ child.uri ? '/' ~ child.uri : '/page/' ~ child._id }}">
-                    <div class="docs-sidebar__section-list-item {{page is defined and toString(page._id) == toString(child._id) ? 'docs-sidebar__section-list-item--active' : ''}}">
-                      <span>{{ child.title | striptags }}</span>
-                    </div>
-                </a>
-              </li>
+              {% include './menulist.twig' with {'item': child} %}
+{#              <li>#}
+{#                <a#}
+{#                  class="docs-sidebar__section-list-item-wrapper"#}
+{#                  href="{{ child.uri ? '/' ~ child.uri : '/page/' ~ child._id }}">#}
+{#                    <div class="docs-sidebar__section-list-item {{page is defined and toString(page._id) == toString(child._id) ? 'docs-sidebar__section-list-item--active' : ''}}">#}
+{#                      <span>{{ child.title | striptags }}</span>#}
+{#                    </div>#}
+{#                </a>#}
+{#              </li>#}
             {% endfor %}
           </ul>
         {% endif %}

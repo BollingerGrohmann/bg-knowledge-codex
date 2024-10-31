@@ -12,7 +12,7 @@ import { isEqualIds } from '../database/index.js';
  * @param level - max level recursion
  * @param currentLevel - current level of element
  */
-export function createMenuTree(parentPageId: EntityId, pages: Page[], pagesOrder: PageOrder[], level = 1, currentLevel = 1): Page[] {
+export function createMenuTree(parentPageId: EntityId, pages: Page[], pagesOrder: PageOrder[], level = 10, currentLevel = 1): Page[] {
   const childrenOrder = pagesOrder.find(order => isEqualIds(order.data.page, parentPageId));
 
   /**
