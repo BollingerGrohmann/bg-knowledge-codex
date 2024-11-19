@@ -1,4 +1,4 @@
 <div>
   {% set filename = file.url|split('/')|last %}
-  File: <b>{{ title }}</b> - <a href="{{ file.url }}" target="_blank" download="{{ file.name }}">{{ file.name }}</a>
+  File: <b>{{ title }}</b> - <a href="{{ file.url }}" target="_blank">{{ file.name }}</a>
 </div>

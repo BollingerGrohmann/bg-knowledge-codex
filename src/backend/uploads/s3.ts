@@ -51,9 +51,13 @@ export default class S3UploadsDriver implements UploadsDriver {
       s3: this.s3Client,
       bucket: config.s3.bucket,
       key: async function (req, file, cb) {
-        const filename = await random16();
 
-        cb(null, path.posix.join(config.s3.keyPrefix, `${filename}.${mime.getExtension(file.mimetype)}`));
+        const foldername = await random16();
+        const filename = file.originalname;
+
+        // cb(null, path.posix.join(config.s3.keyPrefix, `${foldername}/${filename}.${mime.getExtension(file.mimetype)}`));
+        cb(null, path.posix.join(config.s3.keyPrefix, `${foldername}/${filename}`)); // Steffen: keeps original filename, when downloading
+
       },
     });
   }
