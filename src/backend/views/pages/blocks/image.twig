@@ -8,6 +8,10 @@
   {% set classes = classes|merge(['block-image__content--with-background']) %}
 {% endif %}
 
+{% if stretched %}
+  {% set classes = classes|merge(['block-image__content--stretched']) %}
+{% endif %}
+
 <figure class="block-image">
   <div class="{{ classes.join(' ') }}">
     {% if file.mime and file.mime == 'video/mp4' %}

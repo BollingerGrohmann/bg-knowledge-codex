@@ -277,6 +277,10 @@
  */
 .block-image {
 
+  margin-left: 0;
+  margin-right: 0;
+
+
  img {
   display: block;
   margin: 0 auto;
@@ -302,6 +306,14 @@
      img, video {
        max-width: 60%;
        margin: 0 auto;
+     }
+   }
+
+   &--stretched {
+     img, video {
+       max-width: 100%;
+       width: 100%;
+       margin: 0;
      }
    }
  }
